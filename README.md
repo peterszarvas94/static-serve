@@ -1,4 +1,4 @@
-# Server
+# Serve
 
 A simple Go-based static file server for local development and testing.
 
@@ -11,13 +11,13 @@ A simple Go-based static file server for local development and testing.
 ## Installation
 
 ```bash
-go install github.com/peterszarvas94/server@latest
+go install github.com/peterszarvas94/serve@latest
 ```
 
 ## Usage
 
 ```bash
-server [options]
+serve [options]
 ```
 
 ### Options
@@ -29,21 +29,21 @@ server [options]
 
 ```bash
 # Serve current directory on port 8080
-server
+serve
 
 # Serve a specific directory (all equivalent)
-server -d /path/to/website
-server -dir /path/to/website
-server --dir /path/to/website
+serve -d /path/to/website
+serve -dir /path/to/website
+serve --dir /path/to/website
 
 # Use a different port (all equivalent)
-server -p 3000
-server -port 3000
-server --port 3000
+serve -p 3000
+serve -port 3000
+serve --port 3000
 
 # Combine options
-server -d ./public -p 9000
-server --dir ./public --port 9000
+serve -d ./public -p 9000
+serve --dir ./public --port 9000
 ```
 
 ## Building
