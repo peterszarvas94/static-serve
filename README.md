@@ -1,4 +1,4 @@
-# Static Serve
+# Server
 
 A simple Go-based static file server for local development and testing.
 
@@ -11,13 +11,13 @@ A simple Go-based static file server for local development and testing.
 ## Installation
 
 ```bash
-go install github.com/peterszarvas94/static-serve@latest
+go install github.com/peterszarvas94/server@latest
 ```
 
 ## Usage
 
 ```bash
-static-serve [options]
+server [options]
 ```
 
 ### Options
@@ -29,21 +29,21 @@ static-serve [options]
 
 ```bash
 # Serve current directory on port 8080
-static-serve
+server
 
 # Serve a specific directory (all equivalent)
-static-serve -d /path/to/website
-static-serve -dir /path/to/website
-static-serve --dir /path/to/website
+server -d /path/to/website
+server -dir /path/to/website
+server --dir /path/to/website
 
 # Use a different port (all equivalent)
-static-serve -p 3000
-static-serve -port 3000
-static-serve --port 3000
+server -p 3000
+server -port 3000
+server --port 3000
 
 # Combine options
-static-serve -d ./public -p 9000
-static-serve --dir ./public --port 9000
+server -d ./public -p 9000
+server --dir ./public --port 9000
 ```
 
 ## Building
