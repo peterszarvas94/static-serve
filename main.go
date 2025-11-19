@@ -10,19 +10,20 @@ import (
 )
 
 func main() {
-	var (
-		dir  = flag.String("d", ".", "Directory to serve")
-		port = flag.String("p", "8080", "Port to listen on")
-	)
+	var dir, port string
 
-	// Add long flag aliases
-	flag.StringVar(dir, "dir", ".", "Directory to serve")
-	flag.StringVar(port, "port", "8080", "Port to listen on")
+	// Short flags
+	flag.StringVar(&dir, "d", ".", "Directory to serve")
+	flag.StringVar(&port, "p", "8080", "Port to listen on")
+
+	// Long flag aliases
+	flag.StringVar(&dir, "dir", ".", "Directory to serve")
+	flag.StringVar(&port, "port", "8080", "Port to listen on")
 
 	flag.Parse()
 
 	// Convert to absolute path for better logging
-	absDir, err := filepath.Abs(*dir)
+	absDir, err := filepath.Abs(dir)
 	if err != nil {
 		log.Fatalf("Error resolving directory path: %v", err)
 	}
@@ -36,11 +37,11 @@ func main() {
 	fs := http.FileServer(http.Dir(absDir))
 	http.Handle("/", fs)
 
-	fmt.Printf("Serving %s on http://localhost:%s\n", absDir, *port)
+	fmt.Printf("Serving %s on http://localhost:%s\n", absDir, port)
 	fmt.Printf("Press Ctrl+C to stop the server\n")
 
 	// Start server
-	if err := http.ListenAndServe(":"+*port, nil); err != nil {
+	if err := http.ListenAndServe("localhost:"+port, nil); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
 }
