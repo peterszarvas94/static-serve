@@ -14,6 +14,11 @@ func main() {
 		dir  = flag.String("d", ".", "Directory to serve")
 		port = flag.String("p", "8080", "Port to listen on")
 	)
+
+	// Add long flag aliases
+	flag.StringVar(dir, "dir", ".", "Directory to serve")
+	flag.StringVar(port, "port", "8080", "Port to listen on")
+
 	flag.Parse()
 
 	// Convert to absolute path for better logging
