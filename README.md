@@ -8,10 +8,16 @@ A simple Go-based static file server for local development and testing.
 - Configurable port and directory
 - Simple command-line interface
 
+## Installation
+
+```bash
+go install github.com/peterszarvas94/static-serve@latest
+```
+
 ## Usage
 
 ```bash
-go run main.go [options]
+static-serve [options]
 ```
 
 ### Options
@@ -23,16 +29,16 @@ go run main.go [options]
 
 ```bash
 # Serve current directory on port 8080
-go run main.go
+static-serve
 
 # Serve a specific directory
-go run main.go -d /path/to/website
+static-serve -d /path/to/website
 
 # Use a different port
-go run main.go -p 3000
+static-serve -p 3000
 
 # Combine options
-go run main.go -d ./public -p 9000
+static-serve -d ./public -p 9000
 ```
 
 ## Building
