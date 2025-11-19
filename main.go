@@ -11,8 +11,8 @@ import (
 
 func main() {
 	var (
-		dir  = flag.String("d", ".", "Directory to serve (default: current directory)")
-		port = flag.String("p", "8080", "Port to listen on (default: 8080)")
+		dir  = flag.String("d", ".", "Directory to serve")
+		port = flag.String("p", "8080", "Port to listen on")
 	)
 	flag.Parse()
 
