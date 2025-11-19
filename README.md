@@ -22,8 +22,8 @@ static-serve [options]
 
 ### Options
 
-- `-d <directory>` - Directory to serve (default: current directory)
-- `-p <port>` - Port to listen on (default: 8080)
+- `-d, --dir <directory>` - Directory to serve (default: current directory)
+- `-p, --port <port>` - Port to listen on (default: 8080)
 
 ### Examples
 
@@ -33,12 +33,15 @@ static-serve
 
 # Serve a specific directory
 static-serve -d /path/to/website
+static-serve --dir /path/to/website
 
 # Use a different port
 static-serve -p 3000
+static-serve --port 3000
 
 # Combine options
 static-serve -d ./public -p 9000
+static-serve --dir ./public --port 9000
 ```
 
 ## Building
